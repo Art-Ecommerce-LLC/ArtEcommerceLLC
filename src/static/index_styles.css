@@ -22,9 +22,9 @@ body {
     color: #333;
     line-height: 1.6;
     background-image: url('/static/backgroundart.png');
-    background-size: cover; /* Ensures the image covers the entire width */
-    background-position: center; /* Centers the image */
-    background-repeat: repeat-y; /* Repeats the image vertically */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 
@@ -59,14 +59,29 @@ body {
 
 .hero {
     position: relative;
-    background-color: #ff8215;
     color: white;
     text-align: center;
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* Ensures the image covers the entire hero section */
+    background-position: center; /* Centers the image */
     margin-top: 120px;
     border-radius: 8px;
-    overflow: hidden; /* Ensure children respect the border-radius */
+    height: 100vh;; /* Fixed height */
+    width: 100vw; /* Full width */
+    overflow: hidden;
+}
+
+div.hero-text-content {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.hero-text-content h1, .hero-text-content p  {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    color: white
 }
 
 .hero::before {
@@ -80,10 +95,6 @@ body {
     z-index: 1;
 }
 
-.hero h1, .hero p {
-    position: relative;
-    z-index: 2;
-}
 
 .hero h1 {
     font-size: 3rem;
@@ -110,13 +121,13 @@ section {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    padding: 0 3rem 0 3rem;
+    padding: 3rem 3rem 3rem 3rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 8vh auto 10px;
-    height: 770px;
-    background-color: white;;
+    height: auto;
+    background-color: white;
 }
 
 .about p, .contact p, .clientPartners p, .pricing p, .community p {
