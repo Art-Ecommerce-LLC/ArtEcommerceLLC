@@ -118,7 +118,7 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 8vh auto 10px;
-    min-height: 850px;
+    min-height: 875px;
     height: 95vh;
     background-color: white;
     background-image: url('/static/slidebackground.png');
@@ -167,7 +167,6 @@ section {
     font-size: 0.9rem;
     font-weight: normal;
     color: var(--secondary-color);
-    margin-top: 0.3rem;
 }
 
 
