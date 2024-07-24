@@ -47,7 +47,7 @@
     </header>
     
     <section id="hero" class="hero" style="background-image: url('{{ artistlogo }}');">
-        <h1>Art Ecommerce</h1>
+        <img src="{{ url_for('static', path='/logo.png') }}" alt="Art Ecommerce, LLC logo" class="logo-white">
         <p class="slogan">Tailored Ecommerce, Web Solutions, and End-to-End Order Fulfillment</p>
 
     </section>
@@ -61,6 +61,7 @@
                 <div class="ceo-label">
                     Ben Myers<br>
                     CEO/Founder<br>
+                    <span class="local-kid">Encinitas, CA</span>
                     <span class="education">UC Berkeley Graduate, Physics (2023)</span><br>
                     <span class="transition">Physicist Turned Software Developer</span>
                 </div>
@@ -103,6 +104,17 @@
     
     <footer>
         <p>&copy; 2024 Art Ecommerce, LLC. All rights reserved.</p>
+        <nav>
+            <!-- Make navbar seperated by a "|" in the footer -->
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+        </nav>
+        </nav>
     </footer>
 </body>
 </html>

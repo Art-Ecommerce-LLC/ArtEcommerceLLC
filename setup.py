@@ -21,7 +21,7 @@ setup(
         'pillow==8.3.2',
         'aiohttp==3.9.5',
         'loguru==0.7.2',
-        'psycopg==3.1.19',
+        'psycopg==3.2.1',
         'SQLAlchemy == 2.0.31',
         'asyncpg == 0.29.0'
     ],

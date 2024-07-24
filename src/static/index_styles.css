@@ -21,12 +21,15 @@ body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
-    background-image: url('/static/backgroundart.png');
+    /* background-image: url('/static/backgroundart.png'); */
     background-size: cover; /* Ensures the image covers the entire width */
     background-position: center; /* Centers the image */
     background-repeat: repeat-y; /* Repeats the image vertically */
 }
 
+.logo-white {
+    z-index: 2;
+}
 
 .material-symbols-outlined {
   font-variation-settings:
@@ -115,8 +118,13 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 8vh auto 10px;
-    height: 770px;
-    background-color: white;;
+    min-height: 832px;
+    height: 95vh;
+    background-color: white;
+    background-image: url('/static/slidebackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .about p, .contact p, .clientPartners p, .pricing p, .community p {

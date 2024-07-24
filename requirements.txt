@@ -17,4 +17,4 @@ loguru == 0.7.2
 stripe == 9.12.0
 SQLAlchemy == 2.0.31
 asyncpg == 0.29.0
-pyscopg == 3.2.1
+psycopg == 3.2.1
