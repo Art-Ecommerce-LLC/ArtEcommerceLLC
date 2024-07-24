@@ -12,7 +12,7 @@ from src.artecommercellcapi.database import Database, lifespan
 from typing import List
 from src.artecommercellcapi.models import Keys, SiteContent, SiteContentDataUri
 from src.artecommercellcapi.repository import KeysRepository, SiteContentRepository
-from src.artecommercellcapi.middleware import add_middleware
+from src.artecommercellcapi.middleware import add_middleware, limiter
 from src.artecommercellcapi.logger import logger
 from src.artecommercellcapi.cache import Cache
 import os
@@ -76,6 +76,7 @@ async def custom_http_exception_handler(request: Request, exc: HTTPException):
 #         raise HTTPException(status_code=500, detail="Error fetching site content")
 
 @app.get("/", response_class=HTMLResponse)
+@limiter.limit("100/minute")
 async def homepage(request: Request, cache: Cache = Depends(get_cache)):
     logger.info(f"Homepage accessed by: {request.client.host}")
     try:

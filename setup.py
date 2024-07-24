@@ -23,7 +23,8 @@ setup(
         'loguru==0.7.2',
         'psycopg==3.2.1',
         'SQLAlchemy == 2.0.31',
-        'asyncpg == 0.29.0'
+        'asyncpg == 0.29.0',
+        'slowapi == 0.1.9'
     ],
     entry_points={
         'console_scripts': [
