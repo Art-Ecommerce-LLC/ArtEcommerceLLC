@@ -82,18 +82,18 @@ async def homepage(request: Request, cache: Cache = Depends(get_cache)):
     try:
         artecommercelogo = await cache.get_site_content_data_uri_by_label("artecommercelogo")
         artist_logo = await cache.get_site_content_data_uri_by_label("artistlogo")
-        herologo = await cache.get_site_content_data_uri_by_label("herologo")
-        headerlogo = await cache.get_site_content_data_uri_by_label("headerlogo")
-        ceoheadshot = await cache.get_site_content_data_uri_by_label("ceoheadshot")
-        briglogo = await cache.get_site_content_data_uri_by_label("briglogo")
+        # herologo = await cache.get_site_content_data_uri_by_label("herologo")
+        # headerlogo = await cache.get_site_content_data_uri_by_label("headerlogo")
+        # ceoheadshot = await cache.get_site_content_data_uri_by_label("ceoheadshot")
+        # briglogo = await cache.get_site_content_data_uri_by_label("briglogo")
         context = {
             "version": str(int(time.time())),
             "artecommercelogo": artecommercelogo,
             "artistlogo": artist_logo,
-            "herologo": herologo,
-            "headerlogo": headerlogo,
-            "ceoheadshot": ceoheadshot,
-            "briglogo": briglogo
+            # "herologo": herologo,
+            # "headerlogo": headerlogo,
+            # "ceoheadshot": ceoheadshot,
+            # "briglogo": briglogo
         }
         return templates.TemplateResponse(request=request, name="index.html", context=context)
     except Exception as e:
