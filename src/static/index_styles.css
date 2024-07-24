@@ -118,8 +118,8 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     max-width: 800px;
     margin: 8vh auto 10px;
-    min-height: 832px;
-    height: 95vh;
+    min-height: 840px;
+    height: 96vh;
     background-color: white;
     background-image: url('/static/slidebackground.png');
     background-size: cover;
