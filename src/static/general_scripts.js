@@ -7,11 +7,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const header = document.querySelector('header');
     const headerHeight = header.offsetHeight;
 
+    function isMobile() {
+        return window.innerWidth <= 919;
+    }
+
     function scrollToSection(event, targetElement) {
         event.preventDefault();
-        const targetBottom = targetElement.offsetTop + targetElement.offsetHeight;
-        const viewportHeight = window.innerHeight;
-        const scrollToPosition = targetBottom - viewportHeight;
+        let scrollToPosition;
+
+        if (isMobile()) {
+            // For mobile, scroll to the header element of each section
+            scrollToPosition = targetElement.offsetTop - headerHeight;
+        } else {
+            // For desktop, scroll to where the bottom of the section meets the bottom of the viewport
+            const targetBottom = targetElement.offsetTop + targetElement.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            scrollToPosition = targetBottom - viewportHeight;
+        }
 
         window.scrollTo({
             top: scrollToPosition,
@@ -53,9 +65,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll to Home on load
     const homeSection = document.getElementById('hero');
     if (homeSection) {
-        const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
-        const viewportHeight = window.innerHeight;
-        const scrollToHomePosition = homeBottom - viewportHeight;
+        let scrollToHomePosition;
+
+        if (isMobile()) {
+            // For mobile, scroll to the header element of the home section
+            scrollToHomePosition = homeSection.offsetTop - headerHeight;
+        } else {
+            // For desktop, scroll to where the bottom of the home section meets the bottom of the viewport
+            const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            scrollToHomePosition = homeBottom - viewportHeight;
+        }
 
         window.scrollTo({
             top: scrollToHomePosition,
