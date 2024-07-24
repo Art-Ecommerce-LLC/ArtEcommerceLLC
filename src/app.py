@@ -55,25 +55,25 @@ async def custom_http_exception_handler(request: Request, exc: HTTPException):
     if 400 <= exc.status_code < 500:
         return JSONResponse(content={"error": exc.detail}, status_code=exc.status_code)
 
-@app.get("/keys", response_model=List[Keys])
-async def get_keys(cache: Cache = Depends(get_cache)):
-    try:
-        keys = await KeysRepository.fetch_all()
-        logger.info(f"Keys fetched: {keys}")
-        return keys
-    except Exception as e:
-        logger.error(f"Error fetching keys: {e}")
-        raise HTTPException(status_code=500, detail="Error fetching keys")
+# @app.get("/keys", response_model=List[Keys])
+# async def get_keys(cache: Cache = Depends(get_cache)):
+#     try:
+#         keys = await KeysRepository.fetch_all()
+#         logger.info(f"Keys fetched: {keys}")
+#         return keys
+#     except Exception as e:
+#         logger.error(f"Error fetching keys: {e}")
+#         raise HTTPException(status_code=500, detail="Error fetching keys")
     
-@app.get("/sitecontent", response_model=List[SiteContent])
-async def get_site_content(cache: Cache = Depends(get_cache)):
-    try:
-        site_content = await SiteContentRepository.fetch_all()
-        logger.info(f"Site content fetched: {site_content}")
-        return site_content
-    except Exception as e:
-        logger.error(f"Error fetching site content: {e}")
-        raise HTTPException(status_code=500, detail="Error fetching site content")
+# @app.get("/sitecontent", response_model=List[SiteContent])
+# async def get_site_content(cache: Cache = Depends(get_cache)):
+#     try:
+#         site_content = await SiteContentRepository.fetch_all()
+#         logger.info(f"Site content fetched: {site_content}")
+#         return site_content
+#     except Exception as e:
+#         logger.error(f"Error fetching site content: {e}")
+#         raise HTTPException(status_code=500, detail="Error fetching site content")
 
 @app.get("/", response_class=HTMLResponse)
 async def homepage(request: Request, cache: Cache = Depends(get_cache)):
@@ -81,10 +81,18 @@ async def homepage(request: Request, cache: Cache = Depends(get_cache)):
     try:
         artecommercelogo = await cache.get_site_content_data_uri_by_label("artecommercelogo")
         artist_logo = await cache.get_site_content_data_uri_by_label("artistlogo")
+        herologo = await cache.get_site_content_data_uri_by_label("herologo")
+        headerlogo = await cache.get_site_content_data_uri_by_label("headerlogo")
+        ceoheadshot = await cache.get_site_content_data_uri_by_label("ceoheadshot")
+        briglogo = await cache.get_site_content_data_uri_by_label("briglogo")
         context = {
             "version": str(int(time.time())),
             "artecommercelogo": artecommercelogo,
             "artistlogo": artist_logo,
+            "herologo": herologo,
+            "headerlogo": headerlogo,
+            "ceoheadshot": ceoheadshot,
+            "briglogo": briglogo
         }
         return templates.TemplateResponse(request=request, name="index.html", context=context)
     except Exception as e:
