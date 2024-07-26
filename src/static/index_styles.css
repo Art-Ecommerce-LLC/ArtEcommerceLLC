@@ -239,10 +239,6 @@ section h2 {
 /* Mobile styles */
 @media (max-width: 919px) {
 
-    .logo-white {
-        width: 500px;
-    }
-
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -255,4 +251,11 @@ section h2 {
         font-size: 2rem;
     }
     
+}
+
+@media (min-width: 920px) {
+    .logo-white {
+        width: 500px;
+    }
+
 }
