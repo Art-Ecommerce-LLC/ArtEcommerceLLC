@@ -29,6 +29,15 @@ body {
 
 .logo-white {
     z-index: 2;
+    width: 500px; /* Adjust to desired size */
+    height: auto;
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto; /* Maintain aspect ratio */
 }
 
 .material-symbols-outlined {
@@ -37,10 +46,12 @@ body {
   'wght' 400,
   'GRAD' 0,
   'opsz' 24s,;
-  margin-left: 0.3rem;
+  margin-left: 10px;
+  width: 30px;
 }
 
 .logo-wrapper {
+    display: -webkit-flex; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +62,7 @@ body {
     margin-right: auto;
 }
 .phone,.email {
-    margin-left: 0.3rem;
+    margin-left: 10px;
 }
 
 .brig-logo {
@@ -84,8 +95,9 @@ body {
 }
 
 .hero h1, .hero p {
-    position: relative;
-    z-index: 2;
+    z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero h1 {
@@ -106,12 +118,15 @@ body {
     padding: 0 1rem;
     border-radius: 8px;
     display: inline-block;
+    display: -webkit-inline-block; 
 }
 
 section {
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 0 3rem 0 3rem;
     border-radius: 8px;
@@ -132,6 +147,7 @@ section {
 }
 
 .ceo-headshot-wrapper {
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -142,6 +158,7 @@ section {
 }
 
 .ceo-headshot-container {
+    display: -webkit-flex;
     display: flex;
     align-items: center; /* Align items vertically center */
     margin-left: auto;
@@ -159,8 +176,10 @@ section {
     font-size: 1rem;
     font-weight: bold;
     color: var(--dark-color);
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .ceo-label .education, .ceo-label .transition {
@@ -176,6 +195,7 @@ section {
     color: var(--dark-color);
 }
 .contact-info-wrapper {
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -186,6 +206,7 @@ section {
 }
 
 .contact-info {
+    display: -webkit-flex;
     display: flex;
     text-align: left;
     justify-content: left;
@@ -197,11 +218,14 @@ section {
 section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    text-align: center;
     color: var(--dark-color);
     letter-spacing: 1px;
+    width: 100%;
 }
 
 .slogan-wrapper {
+    display: -webkit-flex;
     display: flex;
     justify-content: center;
     align-items: center;

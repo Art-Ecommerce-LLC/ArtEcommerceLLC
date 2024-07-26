@@ -2,7 +2,7 @@
 :root {
     --hamburger-menu-icon-height: 56px;
     --hamburger-menu-icon-width: 32px;
-    --navbar-color: white;;
+    --navbar-color: white;
     --contasting-color: #0E4847;
     --navbar-text-color: #373737;
     --navbar-hover-background-color: #2c8693;
@@ -24,13 +24,14 @@
 
 header {
     background-color: var(--navbar-color);
-    box-shadow: var(--navbar-color) 0px 0px 10px;
+    /* box-shadow: var(--navbar-color) 0px 0px 10px; */
     color: white;
     height: 50px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     top: 0;
@@ -216,6 +217,10 @@ footer {
     padding: 1rem 0;
     margin-top: 2rem;
     overflow: hidden;
+}
+
+main {
+    flex: 1;
 }
 
 footer p {

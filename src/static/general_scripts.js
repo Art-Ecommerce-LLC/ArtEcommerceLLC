@@ -13,17 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function scrollToSection(event, targetElement) {
         event.preventDefault();
-        let scrollToPosition;
-
-        if (isMobile()) {
-            // For mobile, scroll to the header element of each section
-            scrollToPosition = targetElement.offsetTop - headerHeight;
-        } else {
-            // For desktop, scroll to where the bottom of the section meets the bottom of the viewport
-            const targetBottom = targetElement.offsetTop + targetElement.offsetHeight;
-            const viewportHeight = window.innerHeight;
-            scrollToPosition = targetBottom - viewportHeight;
-        }
+        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const scrollToPosition = targetPosition - headerHeight;
 
         window.scrollTo({
             top: scrollToPosition,
@@ -65,17 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Scroll to Home on load
     const homeSection = document.getElementById('hero');
     if (homeSection) {
-        let scrollToHomePosition;
-
-        if (isMobile()) {
-            // For mobile, scroll to the header element of the home section
-            scrollToHomePosition = homeSection.offsetTop - headerHeight;
-        } else {
-            // For desktop, scroll to where the bottom of the home section meets the bottom of the viewport
-            const homeBottom = homeSection.offsetTop + homeSection.offsetHeight;
-            const viewportHeight = window.innerHeight;
-            scrollToHomePosition = homeBottom - viewportHeight;
-        }
+        const homePosition = homeSection.getBoundingClientRect().top + window.scrollY;
+        const scrollToHomePosition = homePosition - headerHeight;
 
         window.scrollTo({
             top: scrollToHomePosition,

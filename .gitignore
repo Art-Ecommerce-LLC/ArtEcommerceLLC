@@ -163,3 +163,5 @@ cython_debug/
 #.idea/
 
 log/*
+
+resume_BenMyers.pdf
