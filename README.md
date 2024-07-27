@@ -1,5 +1,5 @@
-The purpose of this project is to create a website where artists can sell their artwork.
+The purpose of this project is to create a website where artists can contact me to make them a professional platform where they can sell their artwork.
 
-Features I am working on:
 
+Features(Coming Soon)
 * Secure contact form
