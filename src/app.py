@@ -103,8 +103,3 @@ async def homepage(request: Request, cache: Cache = Depends(get_cache)):
 @app.get("/favicon.ico", response_class=RedirectResponse)
 async def favicon(cache: Cache = Depends(get_cache)):
     return RedirectResponse(url="/static/favicon.ico")
-
-
-@app.get("/49063335f0a5b09025d01dbe447147a9.txt", response_class=RedirectResponse)
-async def detectify():
-    return RedirectResponse(url="/static/49063335f0a5b09025d01dbe447147a9.txt")
