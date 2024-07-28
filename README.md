@@ -10,7 +10,7 @@ Requiremnts:
 * NocoDB instance
 
 How to set up local enviornment:
-* Clone the repository with git clone https://github.com/Art-Ecommerce-LLC/ArtEcommerceLLC.git
+* Clone the repository with git clone https://github.com/Art-Ecommerce-LLC/brigart.git
 * Open terminal and navigate to the main directory of the repo
 * Download a python virtual enviornment by running python -m venv .venv
 * Activate the virtual enviornmnet with source .venv/bin/activate for Mac OS/Linux and .venv/scripts/activate.bat for Windows
