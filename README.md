@@ -7,7 +7,7 @@ Features(Coming Soon)
 Requiremnts:
 * Git
 * Python virtual enviornment
-* NocoDB instance
+* PostgreSQL
 
 How to set up local enviornment:
 * Clone the repository with git clone https://github.com/Art-Ecommerce-LLC/ArtEcommerceLLC.git
