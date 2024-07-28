@@ -54,5 +54,5 @@ The purpose of this project is to create a website where artists can contact me 
 
 6. **Now that dependencies are downloaded and you are in the root directory. Run**
    ```
-   uvicorn src.app:app **reload
+   uvicorn src.app:app --reload
    ```
