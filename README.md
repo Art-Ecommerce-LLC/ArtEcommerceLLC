@@ -16,4 +16,4 @@ How to set up local enviornment:
 * Activate the virtual enviornmnet with source .venv/bin/activate for Mac OS/Linux and .venv/scripts/activate.bat for Windows
 * While in the main directory, make sure (.venv) pops up to the left, bottomost line of text in the terminal
 * Run pip install -r requirements.txt
-* Now that dependencies are downlaoded and you are in the main directory. Run uvicorn src.app:app --reload to run your instance
+* Now that dependencies are download and you are in the main directory. Run uvicorn src.app:app --reload to run your instance
