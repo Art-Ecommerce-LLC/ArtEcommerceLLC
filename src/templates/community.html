@@ -1,0 +1,16 @@
+<!-- templates/community.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="community" class="community">
+    <h2>Community<span class="material-symbols-outlined">partner_exchange</span></h2>
+    <p>Art Ecommerce is dedicated to making your art sell. We build artists, designers, and photographers a platform that makes that possible. By partnering with us, artists benefit from a robust platform to market and monetize their creativity.</p>
+    <div class="logo-wrapper">
+        <div class="logo-container">
+            <a href="https://www.briglightart.com">
+                <img src="{{ url_for('static', path='brigLogo.png') }}" alt="Artist logo 1" class="brig-logo">
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

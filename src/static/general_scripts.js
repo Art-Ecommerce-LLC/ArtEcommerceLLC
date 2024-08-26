@@ -12,19 +12,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function scrollToSection(event, targetElement) {
-        event.preventDefault();
-        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-        const scrollToPosition = targetPosition - headerHeight;
+        if (targetElement) {
+            event.preventDefault();
+            const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+            const scrollToPosition = targetPosition - headerHeight;
 
-        window.scrollTo({
-            top: scrollToPosition,
-            behavior: 'smooth'
-        });
+            window.scrollTo({
+                top: scrollToPosition,
+                behavior: 'smooth'
+            });
+        } else {
+            // If the target element does not exist, navigate to the target link
+            window.location.href = event.target.getAttribute('href');
+        }
     }
 
     function handleNavLinkClick(event) {
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
+
         scrollToSection(event, targetElement);
 
         // Hide the mobile menu if it's open
@@ -53,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Scroll to Home on load
+    // Scroll to Home on load if it's on the current page
     const homeSection = document.getElementById('hero');
     if (homeSection) {
         const homePosition = homeSection.getBoundingClientRect().top + window.scrollY;

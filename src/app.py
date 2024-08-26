@@ -75,29 +75,73 @@ async def custom_http_exception_handler(request: Request, exc: HTTPException):
 #         logger.error(f"Error fetching site content: {e}")
 #         raise HTTPException(status_code=500, detail="Error fetching site content")
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/", response_class=HTMLResponse, name="index")
 @limiter.limit("100/minute")
 async def homepage(request: Request, cache: Cache = Depends(get_cache)):
     logger.info(f"Homepage accessed by: {request.client.host}")
     try:
         artecommercelogo = await cache.get_site_content_data_uri_by_label("artecommercelogo")
         artist_logo = await cache.get_site_content_data_uri_by_label("artistlogo")
-        # herologo = await cache.get_site_content_data_uri_by_label("herologo")
-        # headerlogo = await cache.get_site_content_data_uri_by_label("headerlogo")
-        # ceoheadshot = await cache.get_site_content_data_uri_by_label("ceoheadshot")
-        # briglogo = await cache.get_site_content_data_uri_by_label("briglogo")
         context = {
             "version": str(int(time.time())),
             "artecommercelogo": artecommercelogo,
             "artistlogo": artist_logo,
-            # "herologo": herologo,
-            # "headerlogo": headerlogo,
-            # "ceoheadshot": ceoheadshot,
-            # "briglogo": briglogo
         }
         return templates.TemplateResponse(request=request, name="index.html", context=context)
     except Exception as e:
         logger.error(f"Error in homepage: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@app.get("/about", response_class=HTMLResponse, name="about")
+@limiter.limit("100/minute")
+async def about_page(request: Request, cache: Cache = Depends(get_cache)):
+    logger.info(f"About page accessed by: {request.client.host}")
+    try:
+        context = {
+            "version": str(int(time.time()))
+        }
+        return templates.TemplateResponse(request=request, name="about.html", context=context)
+    except Exception as e:
+        logger.error(f"Error in about page: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@app.get("/contact", response_class=HTMLResponse, name="contact")
+@limiter.limit("100/minute")
+async def contact_page(request: Request, cache: Cache = Depends(get_cache)):
+    logger.info(f"Contact page accessed by: {request.client.host}")
+    try:
+        context = {
+            "version": str(int(time.time()))
+        }
+        return templates.TemplateResponse(request=request, name="contact.html", context=context)
+    except Exception as e:
+        logger.error(f"Error in contact page: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@app.get("/community", response_class=HTMLResponse, name="community")
+@limiter.limit("100/minute")
+async def community_page(request: Request, cache: Cache = Depends(get_cache)):
+    logger.info(f"Community page accessed by: {request.client.host}")
+    try:
+        context = {
+            "version": str(int(time.time()))
+        }
+        return templates.TemplateResponse(request=request, name="community.html", context=context)
+    except Exception as e:
+        logger.error(f"Error in community page: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+@app.get("/pricing", response_class=HTMLResponse, name="pricing")
+@limiter.limit("100/minute")
+async def pricing_page(request: Request, cache: Cache = Depends(get_cache)):
+    logger.info(f"Pricing page accessed by: {request.client.host}")
+    try:
+        context = {
+            "version": str(int(time.time()))
+        }
+        return templates.TemplateResponse(request=request, name="pricing.html", context=context)
+    except Exception as e:
+        logger.error(f"Error in pricing page: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 @app.get("/favicon.ico", response_class=RedirectResponse)

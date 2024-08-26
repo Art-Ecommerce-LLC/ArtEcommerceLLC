@@ -1,0 +1,21 @@
+<!-- templates/about.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="about" class="about">
+    <h2>About<span class="material-symbols-outlined">description</span></h2>
+    <p>At Art Ecommerce, we offer comprehensive end-to-end order fulfillment services, alongside creating and hosting custom websites that enable artists to sell their work effortlessly. Whether it's building new web applications or enhancing existing sites with advanced functionalities, our expert team delivers practical solutions that align with our clients' visions and goals.</p>
+    <div class="ceo-headshot-wrapper">
+        <div class="ceo-headshot-container">
+            <img src="{{ url_for('static', path='headshot.png') }}" alt="CEO headshot" class="ceo-headshot">
+            <div class="ceo-label">
+                Ben Myers<br>
+                CEO/Founder<br>
+                <span class="local-kid">Encinitas, CA</span>
+                <span class="education">UC Berkeley Graduate, Physics (2023)</span>
+                <span class="transition">Physicist Turned Software Developer</span>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
