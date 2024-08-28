@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section id="hero" class="hero" style="background-image: url('{{ artistlogo }}');">
+<section id="hero" class="hero" style="background-image: url('{{ url_for('static', path='artistlogo.png') }}');">
     <img src="{{ url_for('static', path='logo.png') }}" alt="Art Ecommerce, LLC logo" class="logo-white">
     <p class="slogan">Tailored Ecommerce, Web Solutions, and End-to-End Order Fulfillment</p>
 </section>
